@@ -36,6 +36,12 @@ public class PlayerController : MonoBehaviour
     {
         // Only horizontal movement is considered
         Vector3 moveDirection = new Vector3(movement.x, movement.y, 0);
+        if (transform.position.x < -25 || transform.position.x > 25)
+        {
+            return;
+        }
         transform.position += moveDirection * playerSpeed * Time.deltaTime;
+
+        
     }
 }
