@@ -14,7 +14,15 @@ public class PlayerController : MonoBehaviour
         {
             this.transform.position += Vector3.right * this.playerSpeed * Time.deltaTime;
         }
-        
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        {
+            this.transform.position += Vector3.down * this.playerSpeed * Time.deltaTime;
+        }
+        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        {
+            this.transform.position += Vector3.up * this.playerSpeed * Time.deltaTime;
+        }
+
     }
 }
  
