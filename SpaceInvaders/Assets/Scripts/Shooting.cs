@@ -15,6 +15,13 @@ public class Shooting: MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log($"Shooting: OnTriggerEnter2D: {other.gameObject.name}");
+        if(other.gameObject.CompareTag("Invader"))
+        {
+            SoundManager.Instance.PlaySound(SoundManager.Sound.Explosion, this.transform.position);
+            Destroy(other.gameObject);
+        }
+
         this.destroyed.Invoke();
         Destroy(this.gameObject);
     }

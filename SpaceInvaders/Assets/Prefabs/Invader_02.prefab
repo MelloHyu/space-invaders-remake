@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Invader_02
       objectReference: {fileID: 0}
+    - target: {fileID: 5471349842776159423, guid: f62d77053e800984fac8051bd04eb9ef, type: 3}
+      propertyPath: m_TagString
+      value: Invader
+      objectReference: {fileID: 0}
     - target: {fileID: 5494116956319922551, guid: f62d77053e800984fac8051bd04eb9ef, type: 3}
       propertyPath: m_Size.x
       value: 1.375

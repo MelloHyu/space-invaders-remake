@@ -29,4 +29,15 @@ public class Invader : MonoBehaviour
 
         _spriteRenderer.sprite = this.animationSprites[_animationFrame];
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log($"Invader: OnTriggerEnter2D: {other.gameObject.name}");
+        if (other.gameObject.CompareTag("Player"))
+        {
+            SoundManager.Instance.PlaySound(SoundManager.Sound.Explosion, this.transform.position);
+            Destroy(other.gameObject);
+            GameManager.Instance.GameOver();
+        }
+    }
 }

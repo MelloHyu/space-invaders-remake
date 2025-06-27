@@ -4,8 +4,8 @@ public class SoundManager : MonoBehaviour
 {
     public enum Sound
     {
+        LaserShot,
         PowerUp,
-        BgMusic,
         Explosion,
     }
     public static SoundManager Instance { get; private set; }

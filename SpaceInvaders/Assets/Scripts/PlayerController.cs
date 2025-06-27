@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private InputSystem_Actions inputActions;
     private Vector2 movement;
 
+
     private void Awake()
     {
         inputActions = new InputSystem_Actions();
@@ -21,12 +22,15 @@ public class PlayerController : MonoBehaviour
     {
         inputActions.Player.Enable();
         inputActions.Player.Move.performed += OnMove;
+        inputActions.Player.Attack.performed += Attack_performed;
         inputActions.Player.Move.canceled += OnMove;
+        
     }
 
     private void OnDisable()
     {
         inputActions.Player.Move.performed -= OnMove;
+        inputActions.Player.Attack.performed -= Attack_performed;
         inputActions.Player.Move.canceled -= OnMove;
         inputActions.Player.Disable();
     }
@@ -36,29 +40,30 @@ public class PlayerController : MonoBehaviour
         movement = context.ReadValue<Vector2>();
     }
 
+    private void Attack_performed(InputAction.CallbackContext obj)
+    {
+        SoundManager.Instance.PlaySound(SoundManager.Sound.LaserShot, this.transform.position);
+        Shoot();
+    }
+
+
     private void Update()
     {
         // Only horizontal movement is considered
         Vector3 moveDirection = new Vector3(movement.x, movement.y, 0);
-        if (transform.position.x < -25 || transform.position.x > 25)
-        {
-            return;
-        }
-        transform.position += moveDirection * playerSpeed * Time.deltaTime;
-        
-        if(Input.GetKeyDown(KeyCode.Space)|| Input.GetMouseButtonDown(0))
-        {
-            Shoot();
-        }
-
-        
+        Vector3 pos = transform.position + moveDirection * playerSpeed * Time.deltaTime;
+        if(pos.x < -25.5f) pos.x = -25.5f; // Left boundary
+        if(pos.x > 25.5f) pos.x = 25.5f; // Right boundary
+        if(pos.y < -14f) pos.y = -14f; // Bottom boundary
+        if(pos.y > 14f) pos.y = 14f; // Top boundary
+        transform.position = pos;
     }
     private void Shoot()
     {
-        if (!_laserActive) {
-            Shooting projectile = Instantiate(this.laserPrefab, this.transform.position, Quaternion.identity);
-            projectile.destroyed += LaserDestroyed;
-            _laserActive = true; }
+         
+         Shooting projectile = Instantiate(this.laserPrefab, this.transform.position, Quaternion.identity);
+         projectile.destroyed += LaserDestroyed;
+         _laserActive = true;
     }
     
     private void LaserDestroyed()
