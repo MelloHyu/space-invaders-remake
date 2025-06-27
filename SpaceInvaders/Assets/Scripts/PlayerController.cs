@@ -3,7 +3,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public Shooting laserPrefab;
+
     public float playerSpeed = 5.0f;
+
+    private bool _laserActive;
 
     private InputSystem_Actions inputActions;
     private Vector2 movement;
@@ -41,7 +45,26 @@ public class PlayerController : MonoBehaviour
             return;
         }
         transform.position += moveDirection * playerSpeed * Time.deltaTime;
+        
+        if(Input.GetKeyDown(KeyCode.Space)|| Input.GetMouseButtonDown(0))
+        {
+            Shoot();
+        }
 
         
     }
+    private void Shoot()
+    {
+        if (!_laserActive) {
+            Shooting projectile = Instantiate(this.laserPrefab, this.transform.position, Quaternion.identity);
+            projectile.destroyed += LaserDestroyed;
+            _laserActive = true; }
+    }
+    
+    private void LaserDestroyed()
+    {
+        _laserActive = false;
+
+    }    
+
 }
