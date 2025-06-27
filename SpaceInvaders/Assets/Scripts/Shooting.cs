@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Shooting: MonoBehaviour
 {
     public Vector3 direction;
 
