@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    //SoundManager.Instance.PlaySound(SoundManager.Sound.<soundname>,transform.position)
     public enum Sound
     {
         LaserShot,
@@ -27,8 +28,8 @@ public class SoundManager : MonoBehaviour
         GameObject soundGameObject = new GameObject("Sound");
         soundGameObject.transform.position = position;
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
-        audioSource.clip = GetAudioClip(sound);
-        audioSource.Play();
+        AudioSource.PlayClipAtPoint(GetAudioClip(sound), position);
+        Destroy(soundGameObject);
     }
 
     public void PlaySound(Sound sound)
