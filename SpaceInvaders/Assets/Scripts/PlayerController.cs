@@ -42,9 +42,13 @@ public class PlayerController : MonoBehaviour
 
     private void Attack_performed(InputAction.CallbackContext obj)
     {
+        if (PowerupManager.Instance != null && PowerupManager.Instance.doubleBulletActive)
+            return; // double bullet shooter will handle this
+
         SoundManager.Instance.PlaySound(SoundManager.Sound.LaserShot, this.transform.position);
         Shoot();
     }
+
 
 
     private void Update()
