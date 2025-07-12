@@ -66,6 +66,7 @@ public class WaveController : MonoBehaviour
 
     public void InvaderDeath()
     {
+        PowerupManager.Instance.spawnPowerup();
         invadersDead++;
         if(invadersDead >= rows*columns)
         {

@@ -5,7 +5,7 @@ using System.Collections;
 public class PowerupManager : MonoBehaviour
 {
     public static PowerupManager Instance;
-
+    public GameObject[] powerupPrefab;
     public bool machineGunActive = false;
     public bool doubleBulletActive = false;
 
@@ -37,5 +37,15 @@ public class PowerupManager : MonoBehaviour
 
         if (type == "MachineGun") machineGunActive = false;
         else if (type == "DoubleBullet") doubleBulletActive = false;
+    }
+
+    public void spawnPowerup()
+    {
+        if (Random.Range(0, 100) < 10) // 10% chance to spawn a powerup
+        {
+            GameObject powerup = Instantiate(powerupPrefab[Random.Range(0,1)]);
+            powerup.transform.position = new Vector3(Random.Range(-16f, 16f), 3f, 0f);
+            
+        }
     }
 }
