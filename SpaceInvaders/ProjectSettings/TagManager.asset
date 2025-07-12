@@ -46,5 +46,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: 1sky
+    uniqueID: 2716981709
+    locked: 0
+  - name: 2cloud
+    uniqueID: 1027705899
+    locked: 0
+  - name: 3background
+    uniqueID: 532846921
+    locked: 0
+  - name: Player
+    uniqueID: 4086779235
+    locked: 0
   m_RenderingLayers:
   - Default

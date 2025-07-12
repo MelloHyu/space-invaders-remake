@@ -6,6 +6,14 @@ public class PlayerController : MonoBehaviour
     public Shooting laserPrefab;
 
     public float playerSpeed = 5.0f;
+    [SerializeField]
+    private float leftBoundary = -25.5f;
+    [SerializeField]
+    private float rightBoundary = 25.5f;
+    [SerializeField]
+    private float topBoundary = 14f;
+    [SerializeField]
+    private float bottomBoundary = -14f;
 
     private bool _laserActive;
 
@@ -56,10 +64,10 @@ public class PlayerController : MonoBehaviour
         // Only horizontal movement is considered
         Vector3 moveDirection = new Vector3(movement.x, movement.y, 0);
         Vector3 pos = transform.position + moveDirection * playerSpeed * Time.deltaTime;
-        if(pos.x < -25.5f) pos.x = -25.5f; // Left boundary
-        if(pos.x > 25.5f) pos.x = 25.5f; // Right boundary
-        if(pos.y < -14f) pos.y = -14f; // Bottom boundary
-        if(pos.y > 14f) pos.y = 14f; // Top boundary
+        if(pos.x < leftBoundary) pos.x = leftBoundary; // Left boundary
+        if(pos.x > rightBoundary) pos.x = rightBoundary; // Right boundary
+        if(pos.y < bottomBoundary) pos.y = bottomBoundary; // Bottom boundary
+        if(pos.y > topBoundary) pos.y = topBoundary; // Top boundary
         transform.position = pos;
     }
     private void Shoot()
