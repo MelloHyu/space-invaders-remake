@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Invader
   - GameManager
+  - Boss
   layers:
   - Default
   - TransparentFX
