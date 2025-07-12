@@ -7,7 +7,9 @@ public class Invader : MonoBehaviour
 
     private SpriteRenderer _spriteRenderer;
     private int _animationFrame;
-
+    public bool isBossMinion = false;
+    public float shootDelay;
+    public EnemyLaserThing enemyLaserThing;
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -17,7 +19,21 @@ public class Invader : MonoBehaviour
     {
         InvokeRepeating(nameof(AnimateSprite), this.animationTime, this.animationTime);
     }
+    public void SetBossMinion(bool shootingEnemy = false, float shootDelay = 0f)
+    {
+        isBossMinion = true;
+        this.shootDelay = shootDelay;
+        if (shootingEnemy) {
+            Invoke(nameof(shoot),shootDelay);
+        }
 
+    }
+
+    public void shoot() { 
+    
+        Instantiate(enemyLaserThing,this.transform.position,Quaternion.identity);
+        Invoke(nameof(shoot),shootDelay);
+    }
     private void AnimateSprite()
     {
         _animationFrame++;
@@ -30,6 +46,7 @@ public class Invader : MonoBehaviour
         _spriteRenderer.sprite = this.animationSprites[_animationFrame];
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log($"Invader: OnTriggerEnter2D: {other.gameObject.name}");
@@ -38,6 +55,7 @@ public class Invader : MonoBehaviour
             SoundManager.Instance.PlaySound(SoundManager.Sound.Explosion, this.transform.position);
             Destroy(other.gameObject);
             GameManager.Instance.GameOver();
+
         }
     }
 }
