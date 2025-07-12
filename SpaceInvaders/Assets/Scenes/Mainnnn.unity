@@ -171,14 +171,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Invaders
       objectReference: {fileID: 0}
+    - target: {fileID: 4039769896767501826, guid: 2a5414e5e04b84649995a48fe7378c75, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4908767657109047306, guid: 2a5414e5e04b84649995a48fe7378c75, type: 3}
       propertyPath: rows
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4908767657109047306, guid: 2a5414e5e04b84649995a48fe7378c75, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908767657109047306, guid: 2a5414e5e04b84649995a48fe7378c75, type: 3}
       propertyPath: columns
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 4908767657109047306, guid: 2a5414e5e04b84649995a48fe7378c75, type: 3}
+      propertyPath: boss.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908767657109047306, guid: 2a5414e5e04b84649995a48fe7378c75, type: 3}
+      propertyPath: 'boss.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7012766356547380003, guid: 63a0baac090c80b4aa3c3757a70ba68c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
