@@ -37,7 +37,6 @@ public class Shooting : MonoBehaviour
             {
                 boss.TakeDamage(10); // Or whatever damage value you want
             }
-
             this.destroyed?.Invoke();
             Destroy(this.gameObject);
         }

@@ -76,6 +76,7 @@ public class WaveController : MonoBehaviour
 
     public void BossDeath()
     {
+        Debug.Log("new wave started");
         SpawnInvaders();
     }
     public void SpawnInvaders()

@@ -54,7 +54,7 @@ public class SpawnerBoss : MonoBehaviour, IBoss
         spawnTimer -= Time.deltaTime;
         if (spawnTimer <= 0f)
         {
-            Vector2 randomPos = new Vector2(Random.Range(-25f, 25f), Random.Range(-4f, 12f));
+            Vector2 randomPos = new Vector2(Random.Range(-15f, 15f), Random.Range(-4.5f, 4.5f));
             Invader invader = Instantiate(prefabs[index], randomPos, Quaternion.identity);
             spawnedInvaders.Add(invader);
             invader.SetBossMinion(true,Random.Range(shootDelayRange.x,shootDelayRange.y));

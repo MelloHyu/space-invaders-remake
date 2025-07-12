@@ -1149,7 +1149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4908767657109047306, guid: 2a5414e5e04b84649995a48fe7378c75, type: 3}
       propertyPath: rows
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4908767657109047306, guid: 2a5414e5e04b84649995a48fe7378c75, type: 3}
       propertyPath: speed
@@ -1157,7 +1157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4908767657109047306, guid: 2a5414e5e04b84649995a48fe7378c75, type: 3}
       propertyPath: columns
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4908767657109047306, guid: 2a5414e5e04b84649995a48fe7378c75, type: 3}
       propertyPath: healthbar
