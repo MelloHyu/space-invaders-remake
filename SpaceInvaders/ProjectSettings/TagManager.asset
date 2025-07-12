@@ -8,6 +8,7 @@ TagManager:
   - GameManager
   - Powerup_MachineGun
   - Powerup_DoubleBullet
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - UI
   - Player
   - Laser
-  - 
+  - Missile
   - 
   - 
   - 
