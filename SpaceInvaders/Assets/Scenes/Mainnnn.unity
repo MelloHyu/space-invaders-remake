@@ -119,6 +119,26 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &388907168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2171846518936274493, guid: 2883d1743102ad24f81ca88dcd71cdcc, type: 3}
+  m_PrefabInstance: {fileID: 6528957205870458117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &388907170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388907168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1417ecd360624d24581e6cc7e1c38c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerupPrefab: []
+  machineGunActive: 1
+  doubleBulletActive: 0
 --- !u!1001 &498993554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -378,8 +398,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798d7b185fa11a346a4af72588f4e96a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserPrefab: {fileID: 8709773296544927206, guid: e4ae6620e76356943a86b7645b32ae56, type: 3}
-  fireRate: 0.1
+  laserPrefab: {fileID: 0}
+  fireRate: 0.2
 --- !u!114 &1161850075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eddafed09ec15b48b19bf5664d4cd1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserPrefab: {fileID: 8709773296544927206, guid: e4ae6620e76356943a86b7645b32ae56, type: 3}
+  laserPrefab: {fileID: 0}
 --- !u!1 &1233895613
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6b4cdb3c2638c54ca116a9fde1ddfd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loopSpeed: 0.1
+  loopSpeed: 0
   bgRenderer: {fileID: 1233895616}
 --- !u!64 &1233895615
 MeshCollider:
@@ -1415,10 +1435,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6364866046486053547, guid: 2883d1743102ad24f81ca88dcd71cdcc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2171846518936274493, guid: 2883d1743102ad24f81ca88dcd71cdcc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 388907170}
   m_SourcePrefab: {fileID: 100100000, guid: 2883d1743102ad24f81ca88dcd71cdcc, type: 3}
 --- !u!1001 &7005444465297400934
 PrefabInstance:

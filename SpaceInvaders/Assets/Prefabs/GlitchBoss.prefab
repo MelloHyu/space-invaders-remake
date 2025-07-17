@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 150
-  currentHealth: 150
+  currentHealth: 10
   bossHealthBar: {fileID: 0}
   flickerInterval: 0.2
   teleportInterval: 2

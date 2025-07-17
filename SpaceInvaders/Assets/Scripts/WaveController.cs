@@ -12,13 +12,14 @@ public class WaveController : MonoBehaviour
     private Vector3 _direction = Vector3.right;
     public Slider healthbar;
 
-
+    private Vector3 initPos = Vector3.zero;
     public static WaveController Instance;
 
     private void Awake()
     {
         if (Instance == null)
         {
+            initPos = this.transform.position;
             Instance = this;
             SpawnInvaders();
         }
@@ -78,10 +79,12 @@ public class WaveController : MonoBehaviour
     public void BossDeath()
     {
         Debug.Log("new wave started");
+        invadersDead = 0;
         SpawnInvaders();
     }
     public void SpawnInvaders()
     {
+        this.transform.position = initPos;
         for (int row = 0; row < rows; row++)
         {
             float width = 2.0f * (columns - 1);

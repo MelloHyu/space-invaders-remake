@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 102657146471901810}
   - component: {fileID: 4908767657109047306}
   m_Layer: 0
-  m_Name: Invaders
+  m_Name: WaveController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,6 +50,8 @@ MonoBehaviour:
   - {fileID: 8574775306384681224, guid: c14c26b0832f3e74388300149ce526de, type: 3}
   - {fileID: 8574775306384681224, guid: c14c26b0832f3e74388300149ce526de, type: 3}
   - {fileID: 2680040054989182281, guid: 225a8020948618c45b431771a65a2abf, type: 3}
+  boss: []
   rows: 5
   columns: 11
   speed: 1
+  healthbar: {fileID: 0}
