@@ -12,11 +12,15 @@ public class EnemyLaserThing : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) {
-            SoundManager.Instance.PlaySound(SoundManager.Sound.Explosion, this.transform.position);
-            Destroy(collision.gameObject);
-            GameManager.Instance.GameOver();
-            Destroy(this.gameObject);
+        if (collision.CompareTag("Player"))
+        {
+            PlayerHealth health = collision.GetComponent<PlayerHealth>();
+            if (health != null)
+            {
+                health.TakeDamage(5); // or whatever value you want
+            }
+
+            Destroy(this.gameObject); // destroy laser after hit
         }
     }
 

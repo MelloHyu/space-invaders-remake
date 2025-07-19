@@ -39,6 +39,14 @@ public class PowerupManager : MonoBehaviour
         else if (type == "DoubleBullet") doubleBulletActive = false;
     }
 
+    public void HealPlayer(GameObject player, int amount)
+    {
+        PlayerHealth health = player.GetComponent<PlayerHealth>();
+        if (health != null)
+        {
+            health.Heal(amount);
+        }
+    }
     public void spawnPowerup()
     {
         if (Random.Range(0, 100) < 10) // 10% chance to spawn a powerup

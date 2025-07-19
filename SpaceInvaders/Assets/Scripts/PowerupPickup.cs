@@ -4,7 +4,7 @@ using UnityEngine;
 public class PowerupPickup : MonoBehaviour
 {
     public float duration = 10f;
-
+    public int healAmount = 15;
     private void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -16,6 +16,11 @@ public class PowerupPickup : MonoBehaviour
         {
             PowerupManager.Instance.ActivatePowerup("DoubleBullet", duration);
         }
+        else if (CompareTag("Powerup_Heal"))
+        {
+            PowerupManager.Instance.HealPlayer(other.gameObject, healAmount);
+        }
+
 
         Destroy(this.gameObject);
     }
